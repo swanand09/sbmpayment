@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+#jquery-loader{
+	border:2px black solid;
+	padding-top:35px;
+	background-color: white;
+	text-align: center;
+}
+#jquery-loader-background{background-color: silver}
+#jquery-loader.blue-with-image{
+	/*border:2px #008587 solid;*/
+        
+        border:2px #F2E9E6 solid;
+	padding-top:45px;
+         padding-left:30px;
+        color:#e74f1e;
+	/*background-color: white;*/
+        background-color:#FAF6F4;
+	text-align: center;
+	background-image: url(images/ajax-loader.gif);
+	background-position: 20px center;
+	background-repeat: no-repeat;
+}
+#jquery-loader.black-with-image{
+	/*border:2px #008587 solid;*/
+        
+        border:2px #ffd96f solid;
+	padding-top:45px;
+        padding-left:30px;
+	/*background-color: white;*/
+        background-color:#fff1a8;
+	/*text-align: left;*/
+	background-image: url(images/ajax-loader-bo2.gif);
+	background-position: 20px center;
+	background-repeat: no-repeat;
+}
+
+#jquery-loader.blue-with-image-2{
+	border:none;
+	padding-top:35px;
+	background-color: transparent;
+	text-align: center;
+	background-image: url(images/ajax-loader.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+
+}

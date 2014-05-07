@@ -1,0 +1,148 @@
+<html>
+<head>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script>
+        $(function() {
+            $("#tabs").tabs();
+        });
+    </script>
+    <style type="text/css">
+        .row {
+            width: 370px;
+            height: 30px;
+        }
+        .row input {
+            width: 200px;
+            float: right;
+        }
+        .row select {
+            width: 200px;
+            float: right;
+        }
+        .field_name {
+            float: left;
+            width: 170px;
+        }
+    </style>
+</head>
+<body>
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Register</a></li>
+        <li><a href="#tabs-2">Status</a></li>
+        <li><a href="#tabs-3">RegisterPreauth</a></li>
+        <li><a href="#tabs-4">AuthPayment</a></li>
+        <li><a href="#tabs-5">RegisterRecurrent</a></li>
+        <li><a href="#tabs-6">complete</a></li>
+        <li><a href="#tabs-7">refund</a></li>
+        <li><a href="#tabs-8">reversal</a></li>
+        <li><a href="#tabs-9">OC</a></li>
+    </ul>
+    <div id="tabs-1">
+        <form action="paymentgate.php" method="POST">
+            <div class="row"><div class="field_name">Currency: </div>
+                <select name="currency">
+                    <option value="643">RUR</option>
+                    <option value="840">USD</option>
+                </select>
+            </div>
+            <div class="row"><div class="field_name">Amount: </div><input type="text" name="amount" id="amount1"/></div>
+            <div style="border: 1px solid grey; color:grey; margin: 20px;">
+                <span style="font-size: 1.4em;">Additional Data</span><br><br>
+                <div class="row"><div class="field_name">Merchant SSL: </div><input type="checkbox" name="merchantSsl" checked style="width: 20px; float: left;"/></div>
+                <div class="row"><div class="field_name">Description: </div><input type="text" name="description" id="description1"/></div>
+                <div class="row"><div class="field_name">Language: </div><input type="text" name="language" id="language1"/></div>
+            </div>
+            <input type="submit" value="Process Order"/>
+        </form>
+    </div>
+    <div id="tabs-2">
+        <form action="paymentmerch.php" method="POST">
+            <div class="row"><div class="field_name">Currency: </div>
+                <select name="currency">
+                    <option value="643">MUR</option>
+                    <option value="840">USD</option>
+                </select>
+            </div>
+            <div class="row"><div class="field_name">Amount: </div><input type="text" name="amount" id="amount2"/></div>
+            <div style="border: 1px solid black; margin: 20px;">
+                <span style="font-size: 1.4em; color: blue;">Card Data</span><br><br>
+                <div class="row"><div class="field_name">Client Card: </div><input type="text" name="pan" id="pan2"/></div>
+                <div class="row"><div class="field_name">Cvc: </div><input type="text" name="cvc" id="cvc2"/></div>
+                <div class="row"><div class="field_name">Year: </div><input type="text" name="year" id="year"/></div>
+                <div class="row"><div class="field_name">Month: </div><input type="text" name="month" id="month"/></div>
+                <div class="row"><div class="field_name">Card Holder: </div><input type="text" name="cardholder" id="cardholder2"/></div>
+
+            </div>
+            <div style="border: 1px solid grey; color:grey; margin: 20px;">
+                <div class="row"><div class="field_name">Merchant SSL: </div><input type="checkbox" name="merchantSsl" checked style="width: 20px; float: left;"/></div>
+                <span style="font-size: 1.4em;">Additional Data</span><br><br>
+                <div class="row"><div class="field_name">Description: </div><input type="text" name="description" id="description2"/></div>
+                <div class="row"><div class="field_name">Language: </div><input type="text" name="language" id="language2"/></div>
+                <div class="row"><div class="field_name">cavv: </div><input name="cavv" autocomplete="off" /></div>
+                <div class="row"><div class="field_name">eci:</div><input name="eci" autocomplete="off" /></div>
+                <div class="row"><div class="field_name">xid:</div><input name="xid" autocomplete="off" /></div>
+            </div>
+            <input type="submit" value="Process Order"/>
+        </form>
+    </div>
+    <div id="tabs-3">
+        <form action="test/regpreauth.php" method="POST">
+            <input type="submit" value="Process Order"/>
+        </form>
+    </div>
+    <div id="tabs-4">
+        <form action="test/authpayment.php" method="POST">
+            <input type="submit" value="Process Order"/>
+        </form>
+    </div>
+    <div id="tabs-5">
+        <form action="test/recurrent.php" method="POST">
+            <input type="submit" value="Process Order"/>
+        </form>
+    </div>
+    <div id="tabs-6">
+        <form action="test/complete.php" method="POST">
+            <div style="border: 1px solid black; margin: 20px;">
+                <span style="font-size: 1.4em; color: blue;">Card Data</span><br><br>
+                <div class="row"><div class="field_name">orderId: </div><input type="text" name="orderId" id="orderId"/></div>
+                <div class="row"><div class="field_name">amount: </div><input type="text" name="amount" id="amount"/></div>
+            </div>
+            <input type="submit" value="Process Order"/>
+        </form>
+    </div>
+    <div id="tabs-7">
+        <form action="test/refund.php" method="POST">
+            <div style="border: 1px solid black; margin: 20px;">
+                <span style="font-size: 1.4em; color: blue;">Card Data</span><br><br>
+                <div class="row"><div class="field_name">orderId: </div><input type="text" name="orderId" id="orderId"/></div>
+                <div class="row"><div class="field_name">amount: </div><input type="text" name="amount" id="amount"/></div>
+            </div>
+            <input type="submit" value="Process Order"/>
+        </form>
+    </div>
+    <div id="tabs-8">
+        <form action="test/reversal.php" method="POST">
+            <div style="border: 1px solid black; margin: 20px;">
+                <span style="font-size: 1.4em; color: blue;">Card Data</span><br><br>
+                <div class="row"><div class="field_name">orderId: </div><input type="text" name="orderId" id="orderId"/></div>
+            </div>
+            <input type="submit" value="Process Order"/>
+        </form>
+    </div>
+    <div id="tabs-9">
+        <form action="test/oc.php" method="POST">
+            <div style="border: 1px solid black; margin: 20px;">
+                <span style="font-size: 1.4em; color: blue;">Card Data</span><br><br>
+                <div class="row"><div class="field_name">orderId: </div><input type="text" name="orderId" id="orderId"/></div>
+                <div class="row"><div class="field_name">amount: </div><input type="text" name="amount" id="amount"/></div>
+            </div>
+            <input type="submit" value="Process Order"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+</html>
